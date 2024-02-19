@@ -1,0 +1,11 @@
+version: '3'
+services:
+  web:
+    image: node:14
+    container_name: express-app
+    working_dir: /app
+    volumes:
+      - ./app:/app
+    ports:
+      - "8000:8000"
+    command: "node index.js"
