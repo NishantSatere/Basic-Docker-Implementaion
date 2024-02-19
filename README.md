@@ -4,7 +4,7 @@
 * Docker allows you to package and distribute applications in the form of containers.
 * Docker making it easier to deploy and run applications consistently across different environments.
 
-* This is pictorial representation
+* This is a pictorial representation
 ![Untitled Diagram drawio](https://github.com/NishantSatere/Basic-Docker-Implementaion/assets/100207648/0f291c18-1f09-4e31-8ac7-55c54bdb8d05)
 
 # Basic commonds
