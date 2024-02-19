@@ -89,3 +89,50 @@ sudo docker compose up
 ```docker
 docker compose down
 ```
+
+
+# Networking
+
+**Brdige**
+
+Dockers default network driver is **Bridge**
+
+Allows containers on the same network to communicate with each other, but they are isolated from external networks by default. 
+Bridge networks use a software bridge that allows containers to connect to each other using internal IP addresses. 
+This type of network is commonly used for communication between containers within the same application.
+Here port mapping is required.
+
+**Host**
+
+* To change the network driver
+```docker
+docekr run -it --network=<network_driver_name> <image_name>
+```
+The container has direct access to the network interfaces of the host machine.
+Network isolation between the host and the container is reduced or eliminated.
+Containers in host mode can directly bind to host ports without port mapping.
+
+**None**
+
+The container has no network access.
+
+# Create custom newtorks
+```docker
+docker network create -d <type_of_driver> <name_of_custom_network>
+```
+
+# Volume Mounting
+
+Volume mounting in Docker is a mechanism that allows you to persist and share data between a host machine and a container.
+
+![Untitled Diagram drawio (2)](https://github.com/NishantSatere/Basic-Docker-Implementaion/assets/100207648/5a9ddac1-0d5a-414f-a850-bfc0704317a9)
+
+
+```docker
+docker run -v /host/path:/container/path <image_name>
+```
+
+Involves linking a directory or file from the host to a directory in the container.
+Enables data persistence, allowing data to survive container restarts or removal.
+Provides a way to share data between the host and container.
+Commonly used for storing configuration files, databases, or any data that needs to persist beyond the container's lifecycle.
